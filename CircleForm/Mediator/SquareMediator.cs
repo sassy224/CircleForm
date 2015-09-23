@@ -90,7 +90,7 @@ namespace CircleForm.Mediator
             //Free memory
             drawingPen.Dispose();
 
-            //Update previousRadius
+            //Update previousLength
             previousLength = currentLength;
         }
 
