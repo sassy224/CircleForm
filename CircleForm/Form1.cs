@@ -1,4 +1,4 @@
-﻿using CircleForm.Mediator;
+﻿using CircleForm.AnimatedShape;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,14 +20,6 @@ namespace CircleForm
             //Enable double buffered
             this.DoubleBuffered = true;
 
-            //Init mediator
-            IAnimatedMediator circleMediator = new CircleMediator(animatedControl1);
-            IAnimatedMediator squareMediator = new SquareMediator(animatedControl2);
-
-            //Delegate event handlers to mediators
-            animatedControl1.SetMediator(circleMediator);
-            animatedControl2.SetMediator(squareMediator);
-
             //Auto resize control
             AutoResizeAnimatedControls();
         }
@@ -48,6 +40,13 @@ namespace CircleForm
             animatedControl2.Width = newWidth;
             animatedControl2.Height = this.ClientRectangle.Height;
             animatedControl2.Location = new Point(newWidth, 0);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Start animation
+            animatedControl1.StartAnimation();
+            animatedControl2.StartAnimation();
         }
     }
 }

@@ -51,15 +51,16 @@
       <DependentUpon>AnimatedControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControl\IAnimatedControl.cs" />
+    <Compile Include="Enums\AnimatedShapes.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mediator\SquareMediator.cs" />
-    <Compile Include="Mediator\CircleMediator.cs" />
-    <Compile Include="Mediator\IAnimatedMediator.cs" />
+    <Compile Include="AnimatedShape\SquareShape.cs" />
+    <Compile Include="AnimatedShape\CircleShape.cs" />
+    <Compile Include="AnimatedShape\IAnimatedShape.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomControl\AnimatedControl.resx">

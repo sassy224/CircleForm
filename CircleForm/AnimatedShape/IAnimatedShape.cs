@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CircleForm.Mediator
+namespace CircleForm.AnimatedShape
 {
-    public interface IAnimatedMediator
+    public interface IAnimatedShape
     {
         /// <summary>
         /// Interface method to handle tick event of animated control
