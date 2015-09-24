@@ -66,5 +66,12 @@ namespace CircleForm.CustomControl
         {
             return this.ClientRectangle.Width;
         }
+
+        public void SetMediator(Mediator.IAnimatedMediator mediator)
+        {
+            this.ControlPaint += mediator.HandlePaintEvent;
+            this.ControlResize += mediator.HandleResizeEvent;
+            this.ControlTick += mediator.HandleTickEvent;
+        }
     }
 }

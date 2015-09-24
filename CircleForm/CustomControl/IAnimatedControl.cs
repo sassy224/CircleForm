@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CircleForm.Mediator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,5 +39,7 @@ namespace CircleForm.CustomControl
         /// </summary>
         /// <returns></returns>
         int GetClientRectangleWidth();
+
+        void SetMediator(IAnimatedMediator mediator);
     }
 }

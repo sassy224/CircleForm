@@ -67,19 +67,29 @@ namespace CircleForm.Mediator
                 if (currentBrush == null)
                     currentBrush = new HatchBrush(HatchStyle.Percent90, Color.Red);
                 else if (currentBrush is HatchBrush)
+                {
+                    currentBrush.Dispose();
                     currentBrush = new LinearGradientBrush(topLeft, bottomRight, Color.Green, Color.GreenYellow);
+                }
                 else if (currentBrush is LinearGradientBrush)
                 {
                     // Create the path (which determines the shape of the gradient).
                     GraphicsPath path = new GraphicsPath();
                     path.AddEllipse(topLeft.X, topLeft.Y, currentRadius, currentRadius);
+
+                    currentBrush.Dispose();
                     currentBrush = new PathGradientBrush(path);
                     ((PathGradientBrush)currentBrush).WrapMode = WrapMode.Tile;
                     ((PathGradientBrush)currentBrush).SurroundColors = new Color[] { Color.White };
                     ((PathGradientBrush)currentBrush).CenterColor = Color.Blue;
+
+                    path.Dispose();
                 }
                 else
+                {
+                    currentBrush.Dispose();
                     currentBrush = new HatchBrush(HatchStyle.Percent90, Color.Red);
+                }
             }
 
             Pen drawingPen = new Pen(Color.Black, 2);

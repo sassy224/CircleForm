@@ -25,13 +25,29 @@ namespace CircleForm
             IAnimatedMediator squareMediator = new SquareMediator(animatedControl2);
 
             //Delegate event handlers to mediators
-            animatedControl1.ControlPaint += circleMediator.HandlePaintEvent;
-            animatedControl1.ControlResize += circleMediator.HandleResizeEvent;
-            animatedControl1.ControlTick += circleMediator.HandleTickEvent;
+            animatedControl1.SetMediator(circleMediator);
+            animatedControl2.SetMediator(squareMediator);
 
-            animatedControl2.ControlPaint += squareMediator.HandlePaintEvent;
-            animatedControl2.ControlResize += squareMediator.HandleResizeEvent;
-            animatedControl2.ControlTick += squareMediator.HandleTickEvent;
+            //Auto resize control
+            AutoResizeAnimatedControls();
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            AutoResizeAnimatedControls();
+        }
+
+        private void AutoResizeAnimatedControls()
+        {
+            //Size of two animated controls must always be = 1/2 of this control's client rectangle width
+            int newWidth = this.ClientRectangle.Width / 2;
+            animatedControl1.Width = newWidth;
+            animatedControl1.Height = this.ClientRectangle.Height;
+            animatedControl1.Location = new Point(0, 0);
+
+            animatedControl2.Width = newWidth;
+            animatedControl2.Height = this.ClientRectangle.Height;
+            animatedControl2.Location = new Point(newWidth, 0);
         }
     }
 }

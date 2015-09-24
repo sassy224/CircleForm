@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.animatedControl1 = new CircleForm.CustomControl.AnimatedControl();
             this.animatedControl2 = new CircleForm.CustomControl.AnimatedControl();
+            this.animatedControl1 = new CircleForm.CustomControl.AnimatedControl();
             this.SuspendLayout();
-            // 
-            // animatedControl1
-            // 
-            this.animatedControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.animatedControl1.Location = new System.Drawing.Point(12, 12);
-            this.animatedControl1.Name = "animatedControl1";
-            this.animatedControl1.Size = new System.Drawing.Size(309, 337);
-            this.animatedControl1.TabIndex = 0;
             // 
             // animatedControl2
             // 
             this.animatedControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.animatedControl2.Location = new System.Drawing.Point(367, 12);
+            this.animatedControl2.Location = new System.Drawing.Point(338, 0);
             this.animatedControl2.Name = "animatedControl2";
-            this.animatedControl2.Size = new System.Drawing.Size(309, 337);
+            this.animatedControl2.Size = new System.Drawing.Size(350, 361);
             this.animatedControl2.TabIndex = 1;
+            // 
+            // animatedControl1
+            // 
+            this.animatedControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.animatedControl1.Location = new System.Drawing.Point(0, 0);
+            this.animatedControl1.Name = "animatedControl1";
+            this.animatedControl1.Size = new System.Drawing.Size(350, 361);
+            this.animatedControl1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -59,6 +59,7 @@
             this.Controls.Add(this.animatedControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
 
         }
